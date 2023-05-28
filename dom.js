@@ -112,31 +112,31 @@ doument.querySelector(' ')==$('')
 */ 
 
 
-let mainHeader=document.querySelector('#main-header');
-mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
-let input = document.querySelector('input');
-// it select the fir one.
-input.value="hello world"
+// let mainHeader=document.querySelector('#main-header');
+// mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
+// let input = document.querySelector('input');
+// // it select the fir one.
+// input.value="hello world"
 
 // with queryselector we can use any css selector .
-let submit=document.querySelector('input[type=submit]');
-submit.value="SEND";
+// let submit=document.querySelector('input[type=submit]');
+// submit.value="SEND";
 
-let item=document.querySelector('.list-group-item');
+// let item=document.querySelector('.list-group-item');
 // this way not addded style.  
 // let item=document.querySelector('.list-group-item list-group-item-info');
 
-item.style.color='red'
+// item.style.color='red'
 
 
-let lastItem=document.querySelector('.list-group-item:last-child');
-lastItem.style.color='yellow'
+// let lastItem=document.querySelector('.list-group-item:last-child');
+// lastItem.style.color='yellow'
 
-let secondItem=document.querySelector('.list-group-item:nth-child(2)');
-secondItem.style.color='blue';
+// let secondItem=document.querySelector('.list-group-item:nth-child(2)');
+// secondItem.style.color='blue';
 
-let thirdItem=document.querySelector('.list-group-item:nth-child(3)');
-thirdItem.style.visibility='hidden';
+// let thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+// thirdItem.style.visibility='hidden';
 
 
 // QUERYSELECTORALL IS SIMILLAR TO GETELMENTBYCLASSNAME/TAGNAME.
@@ -144,19 +144,129 @@ thirdItem.style.visibility='hidden';
 
 // it give the nodelist.
 
-let titles=document.querySelectorAll('.title');
+// let titles=document.querySelectorAll('.title');
 // NodeList(2) [h2.title, h2.title]...which simialr to collection
 // console.log(titles)
 // titles[0].textContent='hello'
 
-var odd=document.querySelectorAll('li:nth-child(odd)');
-var even=document.querySelectorAll('li:nth-child(even)');
+// var odd=document.querySelectorAll('li:nth-child(odd)');
+// var even=document.querySelectorAll('li:nth-child(even)');
 
 // console.log(odd)
-for(let i=0;i<odd.length;i++){
-    odd[i].style.backgroundColor="grey"
+// for(let i=0;i<odd.length;i++){
+//     odd[i].style.backgroundColor="grey"
 
-}
-for(let i=0;i<even.length;i++){
-    even[i].style.backgroundColor='#ccc'
-}
+// }
+// for(let i=0;i<even.length;i++){
+//     even[i].style.backgroundColor='#ccc'
+// }
+
+
+// ==============================================
+
+// TRAVERSING THE DOM.
+
+/*
+   kind of moving up and down , loking at parent  node child node and sibling
+   like div main is parent for h2 , h2 is child of main , and h2 and form are the sibling because they are same level
+
+*/
+
+
+// parentNode
+var itemlist=document.querySelector('#items');
+// you will main div
+// console.log(itemlist.parentNode);
+// css not applying here.
+// itemlist.parentNode.color='#f4f4f4';
+// it div container class.
+// console.log(itemlist.parentNode.parentNode)
+// body
+// console.log(itemlist.parentNode.parentNode.parentNode);
+
+// parentElement
+
+// parent node and parentelement are the same thing
+// console.log(itemlist.parentElement)
+// console.log(itemlist.parentElement.parentElement)
+
+
+
+// childNodes
+// recoment not use;
+// it also contain text(white spaces) with nodelist 
+// console.log(itemlist.childNodes)
+
+
+// children
+// it is html collection not a nodelist
+// console.log(itemlist.children)
+// console.log(itemlist.children[1]);
+// itemlist.children[1].style.backgroundColor='yellow'
+
+// firstchild ==> it also having the space problem;===>instead you firstelemntchid
+// it will not give you the item1 ;
+// console.log(itemlist.firstChild);
+
+
+
+// // firstElementchild
+// console.log(itemlist.firstElementChild)
+// itemlist.firstElementChild.textContent='Hello 1'
+
+
+// lastChild
+
+// console.log(itemlist.lastChild);
+// // lastElemntchild
+// console.log(itemlist.lastElementChild)
+// itemlist.lastElementChild.textContent='Hello 4'
+
+
+
+// nextsibling
+// gives the text;
+// console.log(itemlist.nextSibling)
+
+// nextelementsibling
+// console.log(itemlist.nextElementSibling)
+
+// previoussibling
+
+// console.log(itemlist.previousSibling)
+
+// previouselementsibling
+// console.log(itemlist.previousElementSibling)
+// itemlist.previousElementSibling.style.color='red'
+// you can see you select anything you want....you dont need jquery
+// jquery add file and it will slow the page , you can for other purpose but for dom it is not needed;
+// there is nice jquery plugin for thing like animation like when you scroll down , certai thing pop-out
+// i mean you can do that through js also but there are really nice jquery plugin available
+
+
+
+// createelement
+
+var newDiv=document.createElement('div');
+console.log(newDiv);
+
+newDiv.className='hello';
+newDiv.id='hey';
+// add attr
+newDiv.setAttribute('title','hello div');
+// create text node
+var newdivtxt=document.createTextNode('Hello Chandan');
+console.log(newdivtxt)
+// error it is not node;
+// newDiv.appendChild(heyyyy)
+newDiv.appendChild(newdivtxt)
+newDiv.style.color='black'
+newDiv.style.fontWeight='bold'
+
+
+
+// remember this....
+var container=document.querySelector('header .container');
+var h1=document.querySelector('header h1');
+
+container.insertBefore(newDiv,h1)
