@@ -27,7 +27,7 @@ the object
 
 // var headerTitle=document.getElementById('header-title');
 // ?
-let headerTitle=document.getElementById('header-title');
+// let headerTitle=document.getElementById('header-title');
 
 // console.log(headerTitle)
 // headerTitle.textContent="hello"
@@ -60,8 +60,8 @@ innerText
 // h3 is inside h1 now.
 // headerTitle.innerHTML='<h3>Hello</h3>'
 
-let mainHeader=document.getElementById('main-header');
-mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
+// let mainHeader=document.getElementById('main-header');
+// mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
 
 
 // GETELEMENTSBYCLASSNAME
@@ -98,3 +98,65 @@ mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
 
 
 // QUERYSELECTOR ..... 
+/*
+this work as like jquery work....only diffrence is this will use only for one item.
+for more one you canuse queryselectorall.
+if class title name more that it obly grab the first one.QUERYSELECTOR
+you use any css selector.
+for class .
+for id #
+for item like li;
+doument.querySelector(' ')==$('')
+
+
+*/ 
+
+
+let mainHeader=document.querySelector('#main-header');
+mainHeader.style.borderBottom='solid 3px hsl(0, 0%, 88%)';
+let input = document.querySelector('input');
+// it select the fir one.
+input.value="hello world"
+
+// with queryselector we can use any css selector .
+let submit=document.querySelector('input[type=submit]');
+submit.value="SEND";
+
+let item=document.querySelector('.list-group-item');
+// this way not addded style.  
+// let item=document.querySelector('.list-group-item list-group-item-info');
+
+item.style.color='red'
+
+
+let lastItem=document.querySelector('.list-group-item:last-child');
+lastItem.style.color='yellow'
+
+let secondItem=document.querySelector('.list-group-item:nth-child(2)');
+secondItem.style.color='blue';
+
+let thirdItem=document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.visibility='hidden';
+
+
+// QUERYSELECTORALL IS SIMILLAR TO GETELMENTBYCLASSNAME/TAGNAME.
+// Grab more than one thing
+
+// it give the nodelist.
+
+let titles=document.querySelectorAll('.title');
+// NodeList(2) [h2.title, h2.title]...which simialr to collection
+// console.log(titles)
+// titles[0].textContent='hello'
+
+var odd=document.querySelectorAll('li:nth-child(odd)');
+var even=document.querySelectorAll('li:nth-child(even)');
+
+// console.log(odd)
+for(let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor="grey"
+
+}
+for(let i=0;i<even.length;i++){
+    even[i].style.backgroundColor='#ccc'
+}
