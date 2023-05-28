@@ -247,26 +247,127 @@ var itemlist=document.querySelector('#items');
 
 // createelement
 
-var newDiv=document.createElement('div');
-console.log(newDiv);
+// var newDiv=document.createElement('div');
+// console.log(newDiv);
 
-newDiv.className='hello';
-newDiv.id='hey';
+// newDiv.className='hello';
+// newDiv.id='hey';
 // add attr
-newDiv.setAttribute('title','hello div');
+// newDiv.setAttribute('title','hello div');
 // create text node
-var newdivtxt=document.createTextNode('Hello Chandan');
-console.log(newdivtxt)
+// var newdivtxt=document.createTextNode('Hello Chandan');
+// console.log(newdivtxt)
 // error it is not node;
 // newDiv.appendChild(heyyyy)
-newDiv.appendChild(newdivtxt)
-newDiv.style.color='black'
-newDiv.style.fontWeight='bold'
+// newDiv.appendChild(newdivtxt)
+// newDiv.style.color='black'
+// newDiv.style.fontWeight='bold'
 
 
 
 // remember this....
-var container=document.querySelector('header .container');
-var h1=document.querySelector('header h1');
+// var container=document.querySelector('header .container');
+// var h1=document.querySelector('header h1');
 
-container.insertBefore(newDiv,h1)
+// container.insertBefore(newDiv,h1)
+
+// var button=document.getElementById('button');
+
+// button.addEventListener('click',function(){
+//     console.log('Thank you!!')
+// })
+
+// ================================ EVENT ===========================================
+
+
+// button.addEventListener('click',clickfun)
+
+// function clickfun(event){
+    /*
+       when you listen for an event and run a function pass in parameter
+       console.log(event) get all propertiex that event parameter capture;like class name of element , id , attribute
+       postion of mouse , target==>gives the actual elemnt that is clicked==>whatever the element event is fire from
+    */ 
+    // // console.log('button clicked')
+    // document.getElementById('header-title').textContent='changed';
+    // document.querySelector('#main').style.backgroundColor='red'
+    // console.log(event);
+    // console.log(event.target);
+
+    // console.log(event.target.id);
+    // console.log(event.target.className);
+    // console.log(event.target.classList);
+    // var output=document.getElementById('output');
+    // output.innerHTML='<h3>'+event.target.id+'</h3>'
+    // basically it tell what type of event it is..
+    // console.log(event.type)
+
+// from the lef
+    // console.log(event.clientX);
+    // from the top
+    // console.log(event.clientY);
+// from the actual position
+    // console.log(event.offsetX);
+    // console.log(event.offsetY);
+
+//   hold alt key then click will gives true value; same below
+    // console.log(event.altKey)
+    // console.log(event.ctrlKey)
+    // console.log(event.shiftKey)
+
+// }
+
+
+var button=document.getElementById('button');
+var box=document.getElementById('box');
+// button.addEventListener('click',runEvent);
+// button.addEventListener('dblclick',runEvent)
+// during mouse presing
+// button.addEventListener('mousedown',runEvent)
+// during mouse realsing
+// button.addEventListener('mouseup',runEvent)
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave',runEvent)
+// OVER INSIDE ELEMNT   
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout',runEvent)
+// box.addEventListener('mousemove',runEvent)
+// var itemInput=document.querySelector('input[type="text"]');
+// var form =document.querySelector('form');
+
+// itemInput.addEventListener('keydown',runEvent)
+// itemInput.addEventListener('keyup',runEvent)
+
+// itemInput.addEventListener('keypress',runEvent)
+
+// itemInput.addEventListener('focus',runEvent)
+// itemInput.addEventListener('blur',runEvent)
+// when you cut , cut event will fire
+// itemInput.addEventListener('cut',runEvent)
+// when you paste , paste event will fire
+// itemInput.addEventListener('paste',runEvent)
+// itemInput.addEventListener('input',runEvent)
+// var select=document.querySelector('select');
+// select.addEventListener('change',runEvent)
+
+// form.addEventListener('submit',runEvent);
+
+// function runEvent(event){
+// without writing this you can see blink happing in console , that beacuse it 
+// submiiting to page it just working like html form in order to no do that you have to prevent
+// that from happing 
+// event.preventDefault(); 
+    // console.log('EVENT TYPE: '+event.type)
+    // console.log(event.target.value);
+    // document.getElementById('output').innerHTML='<h3>'+event.target.value+'</h3>'
+
+    // output.innerHTML='<h3>MouseX: '+event.offsetX+'</h3><h3>MouseY: '+event.offsetY+'</h3>';
+
+    // box.style.backgroundColor="rgb("+event.offsetX+","+event.offsetY+",40)"
+
+
+    // document.body.style.display='none'
+
+    // console.log(event.target.value)
+
+// }
