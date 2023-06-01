@@ -25,17 +25,25 @@ var li=document.createElement('li');
 // li.style.display='inline';
 
 var button=document.createElement('button')
+var button2=document.createElement('button')
+// console.log(button2)
 button.className='btnDelete'
+button2.className='btnedit'
 var btnValue=document.createTextNode('Delete')
+var editValue=document.createTextNode('Edit')
+
 button.appendChild(btnValue)
+button2.appendChild(editValue)
 var nameNode=document.createTextNode(fname);
 var emailNode=document.createTextNode(UserEmail);
 var userNode=document.createTextNode(Userphn);
+
 
 li.appendChild(nameNode);
 li.appendChild(emailNode);
 li.appendChild(userNode);
 li.appendChild(button)
+li.appendChild(button2)
 // console.log(li);
 Ulitems.appendChild(li)
 // Ulitems.appendChild(button)
@@ -65,6 +73,8 @@ SubmitDetails.onclick(function(event){
 */
 var btnDelete=document.getElementsByClassName('btnDelete');
 Ulitems.addEventListener('click',removeItem)
+Ulitems.addEventListener('click',editItem)
+
 
 
 
@@ -113,6 +123,8 @@ function removeItem(event){
           console.log(UserEmail)
         //   remeber this* ==>you have done lot of mistake to implementing this.
           localStorage.removeItem(li.childNodes[1].textContent);  
+
+
           
 
 
@@ -123,3 +135,33 @@ function removeItem(event){
 
 
 }
+
+function editItem(event){
+
+    if(event.target.classList.contains('btnedit')){
+     var items=Ulitems.getElementsByTagName('li');
+     var li=event.target.parentElement;
+     Ulitems.removeChild(li);
+     
+         //   remeber this* ==>you have done lot of mistake to implementing this.
+           localStorage.removeItem(li.childNodes[1].textContent);  
+ 
+document.getElementById('fname').value =li.childNodes[0].textContent;
+document.getElementById('UserEmail').value =li.childNodes[1].textContent;
+// Showing Error
+document.getElementById('UserPhn').value =li.childNodes[2].textContent;
+
+
+
+
+           
+           
+ 
+ 
+ 
+    }
+   
+ 
+ 
+ 
+ }
